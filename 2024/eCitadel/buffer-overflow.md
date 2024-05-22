@@ -1,5 +1,5 @@
 ---
-title: eCitadel 24 "Buffer Overflow Challenge"
+title: eCitadel 24 "Buffer Overflow"
 date: 2024-05-21
 description: Quick explanation of five different methods to solve a buffer overflow challenge.
 categories:
@@ -52,6 +52,7 @@ So let's look at the object dump of the main program
  8049427:  c7 04 24 08 a0 04 08    mov    DWORD PTR [esp],0x804a008
  804942e:  e8 2d fc ff ff          call   8049060 <strncmp@plt>
 ```
+
 1. Function sets up the stack size `0xf0` (240 bytes)
 2. It stores the pointer it jumps to `0xec` (236 bytes) into the stack
 3. Our input is stored at `0x1b` (27 bytes) into the stack
