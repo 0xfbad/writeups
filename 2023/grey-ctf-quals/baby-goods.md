@@ -4,6 +4,7 @@ date: 2024-04-24
 description: Writeup for pwn/baby-goods from Grey CTF Quals 2024.
 categories:
   - pwn
+  - x86-64
 ---
 
 > I have opened a new shop for baby goods! Feel free to explore around :)

@@ -4,6 +4,7 @@ date: 2024-04-24
 description: Writeup for pwn/the-motorala from Grey CTF Quals 2024.
 categories:
   - pwn
+  - x86-64
 ---
 
 > i bet u wont guess my pin
