@@ -59,14 +59,14 @@ So let's look at the object dump of the main program
 
 So from this, we know we need to write into the pointer here, which is 236 bytes into the stack. We know that our input starts at 27 bytes into the stack, so to control the pointer, its as simple as writing doing a little math `236 - 27 = 209`. We need to write 209 bytes/characters to the program to control the pointer.
 
-Real quick, we can grab the address of `!#c secret()` by grepping objdump:
+Real quick, we can grab the address of `#!c secret()` by grepping objdump:
 
 ```shell
 $ objdump -d prog1 | grep "secret"
 080493d5 <secret>:
 ```
 
-So the address of `!#c secret()` is `0x080493d5`. Due to the endianness, we need to write the address in reverse order, so `d5 93 04 08`, and we'll add the prefix of `\x` to each byte so the program knows its a byte.
+So the address of `#!c secret()` is `0x080493d5`. Due to the endianness, we need to write the address in reverse order, so `d5 93 04 08`, and we'll add the prefix of `\x` to each byte so the program knows its a byte.
 
 To test if we're correct, we can use perl to generate the input for us:
 
