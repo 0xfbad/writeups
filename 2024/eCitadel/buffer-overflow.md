@@ -123,7 +123,7 @@ The nice thing about Ghidra is it figured out the compiled buffer size for us, w
 
 To get the address of `#!c secret()`, we can simply hover over the defined pointer in Ghidra, or we can press ++g++ to find the function. This gives us the address of `08049b1b`.
 
-![Ghidra Secret Function](./_assets/ghidra-secret-func.png "Finding the address of secret() in Ghidra")
+![Ghidra Secret Function](_assets/ghidra-secret-func.png "Finding the address of secret()")
 
 Lets test our findings:
 
@@ -274,7 +274,7 @@ I was going to do this originally for prog4, but then I realized halfway through
 ## Stripped Binaries
 To do this for a stripped binary like prog4, I'd suggest using a decompiler like Ghidra, jumping (using ++g++) to the `#!c entry()` function (since it's stripped and main will be named to something like `#!c FUN_080493f4()`), and looking at the decompiled code to figure out where the secret function is. Here's a quick example of that for the stripped binary:
 
-![Ghidra Secret Function Stripped](./_assets/ghidra-secret-func-stripped.png "Finding the address of the stripped secret() in Ghidra")
+![Ghidra Secret Function Stripped](_assets/ghidra-secret-func-stripped.png "Finding the address of the stripped secret()")
 
 And from the decompiled view in Ghidra, I can see the buffer is `208` and that the stripped secret function is at `0x08049a11`. So quickly testing it out:
 
